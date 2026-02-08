@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oumaima Mamdouh | Junior Web Developer & QA Tester</title>
+  <meta name="description" content="Portfolio of Oumaima Mamdouh - Junior Full-Stack Web Developer (React/Node/MongoDB) & Manual QA Tester." />
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --card:#10182a;
+      --muted:#b6c2e2;
+      --text:#eef3ff;
+      --accent:#7aa7ff;
+      --accent2:#7dffcc;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 10px 40px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1050px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(122,167,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 85% 30%, rgba(125,255,204,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg), #060814 60%, #050611);
+      min-height:100vh;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(5,6,17,.55);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      max-width:var(--max); margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 18px;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 24px rgba(122,167,255,.35);
+    }
+    .nav a.link{
+      opacity:.9; font-weight:600; font-size:14px;
+      padding:8px 10px; border-radius:10px;
+    }
+    .nav a.link:hover{background:rgba(255,255,255,.06)}
+    .nav .links{display:flex; gap:6px; align-items:center; flex-wrap:wrap}
+
+    .hero{
+      margin-top:20px;
+      display:grid; grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background:rgba(16,24,42,.75);
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding:20px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:38px;
+      line-height:1.1;
+      letter-spacing:-.6px;
+    }
+    .subtitle{
+      color:var(--muted);
+      margin:0 0 18px;
+      font-size:15.5px;
+      line-height:1.55;
+    }
+    .badge-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .badge{
+      font-family:var(--mono);
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:#d9e5ff;
+    }
+    .btn-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#061022;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
+    .meta{
+      display:grid; gap:10px;
+    }
+    .meta .item{
+      display:flex; justify-content:space-between; gap:12px; align-items:center;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+    }
+    .k{color:var(--muted); font-size:13px}
+    .v{font-weight:700; font-size:13px}
+    section{margin-top:18px}
+    h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns: repeat(2, 1fr)}
+    }
+    @media (max-width: 640px){
+      .grid{grid-template-columns: 1fr}
+    }
+
+    .proj{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      transition: transform .15s ease;
+    }
+    .proj:hover{transform: translateY(-2px)}
+    .proj h3{
+      margin:0 0 8px;
+      font-size:15px;
+    }
+    .proj p{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.5;
+    }
+    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-family:var(--mono);
+      font-size:11px;
+      padding:6px 8px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:#d9e5ff;
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 860px){
+      .two{grid-template-columns:1fr}
+    }
+
+    ul.clean{
+      margin:0; padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .footer{
+      margin-top:24px;
+      color:rgba(255,255,255,.55);
+      font-size:12.5px;
+      text-align:center;
+    }
+    .small{
+      font-size:12.5px;
+      color:var(--muted);
+      margin:8px 0 0;
+    }
+    .divider{
+      height:1px; background:var(--border); margin:14px 0;
+    }
+    input, textarea{
+      width:100%;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      padding:12px 12px;
+      font-size:14px;
+      outline:none;
+    }
+    textarea{min-height:110px; resize:vertical}
+    label{display:block; margin:10px 0 6px; color:var(--muted); font-size:13px}
+    .note{
+      font-size:12px;
+      color:rgba(255,255,255,.55);
+      margin-top:8px;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Oumaima Mamdouh</span>
+    </div>
+    <div class="links">
+      <a class="link" href="#projects">Projects</a>
+      <a class="link" href="#qa">QA</a>
+      <a class="link" href="#skills">Skills</a>
+      <a class="link" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="card">
+      <h1>Junior Web Developer & Manual QA Tester</h1>
+      <p class="subtitle">
+        I build clean, responsive websites and test web apps to catch layout breaks, broken links,
+        and UX issues across devices. Interested in cybersecurity, IoT, and embedded systems.
+      </p>
+
+      <div class="badge-row">
+        <span class="badge">React</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">MongoDB</span>
+        <span class="badge">HTML/CSS</span>
+        <span class="badge">Manual QA</span>
+      </div>
+
+      <div class="btn-row">
+        <!-- Replace the # links with your real links -->
+        <a class="btn primary" href="#contact">Hire Me</a>
+        <a class="btn" href="https://www.linkedin.com/in/oumaima-mamdouh-743409212" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="mailto:oumayma20054@gmail.com">Email</a>
+      </div>
+
+      <p class="small">
+        Based in Guelmim, Morocco — Available for entry-level projects (web fixes, landing pages, manual QA).
+      </p>
+    </div>
+
+    <div class="card meta">
+      <div class="item">
+        <span class="k">Role</span>
+        <span class="v">Full-Stack (Junior) + QA</span>
+      </div>
+      <div class="item">
+        <span class="k">Typical tasks</span>
+        <span class="v">Responsive checks, bug reports</span>
+      </div>
+      <div class="item">
+        <span class="k">Deliverables</span>
+        <span class="v">Screenshots + clear notes</span>
+      </div>
+      <div class="item">
+        <span class="k">Tools</span>
+        <span class="v">Chrome DevTools, Checklists</span>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <h2>What I can do quickly</h2>
+        <ul class="clean">
+          <li>Cross-device & responsive testing</li>
+          <li>Broken link / CTA / form verification</li>
+          <li>UI spacing + layout bug reporting</li>
+          <li>Small HTML/CSS fixes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section id="projects" class="card">
+    <h2>Projects</h2>
+    <p class="subtitle" style="margin-top:0">
+      Replace the placeholders below with your real projects. If you don’t have any yet, start with 2 simple demos:
+      (1) Landing page, (2) Small CRUD app.
+    </p>
+
+    <div class="grid">
+      <div class="proj">
+        <h3>Administrative Document Tracker (Internship)</h3>
+        <p>Web app to manage and track administrative documents (upload, status, search).</p>
+        <div class="tags">
+          <span class="tag">Web App</span>
+          <span class="tag">CRUD</span>
+          <span class="tag">Docs</span>
+        </div>
+        <p class="small">
+          Link: <span class="tag">Add GitHub/Live URL</span>
+        </p>
+      </div>
+
+      <div class="proj">
+        <h3>Responsive Landing Page Demo</h3>
+        <p>Clean landing page with mobile-first design, CTA, and contact section.</p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Responsive</span>
+        </div>
+        <p class="small">
+          Link: <span class="tag">Add GitHub/Live URL</span>
+        </p>
+      </div>
+
+      <div class="proj">
+        <h3>Mini Full-Stack CRUD (React + Node)</h3>
+        <p>Simple app (e.g., tasks or notes) with REST API and MongoDB.</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Node</span>
+          <span class="tag">MongoDB</span>
+        </div>
+        <p class="small">
+          Link: <span class="tag">Add GitHub/Live URL</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="qa" class="two">
+    <div class="card">
+      <h2>Manual QA Checklist</h2>
+      <ul class="clean">
+        <li>Test all pages & navigation flows</li>
+        <li>Click every button, link, and menu item</li>
+        <li>Validate forms (required fields, errors, success)</li>
+        <li>Responsive testing (desktop/tablet/mobile)</li>
+        <li>Cross-browser (Chrome/Firefox/Edge if possible)</li>
+        <li>Report issues with: page URL, steps, expected vs actual, screenshot</li>
+      </ul>
+      <p class="small">Tip: I can deliver findings in a Google Sheet or a simple PDF report.</p>
+    </div>
+
+    <div class="card">
+      <h2>Sample Bug Report Template</h2>
+      <p class="subtitle" style="margin-top:0">
+        Copy this format when you report bugs to clients:
+      </p>
+      <pre style="margin:0; white-space:pre-wrap; font-family:var(--mono); font-size:12.5px; color:#d9e5ff; background:rgba(0,0,0,.25); border:1px solid var(--border); padding:12px; border-radius:12px;">
+Title: [Short issue name]
+Page: [URL or page name]
+Device: [Desktop/Mobile/Tablet], Browser: [Chrome/Firefox/Edge]
+Steps:
+1) ...
+2) ...
+Expected: ...
+Actual: ...
+Severity: [Low/Medium/High]
+Screenshot: [attach]
+      </pre>
+    </div>
+  </section>
+
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <div class="grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="proj"><h3>Frontend</h3><p>HTML, CSS, Responsive UI, React (basic)</p></div>
+      <div class="proj"><h3>Backend</h3><p>Node.js (basic), PHP (basic), REST concepts</p></div>
+      <div class="proj"><h3>Database</h3><p>MongoDB, MySQL (basic schema + queries)</p></div>
+      <div class="proj"><h3>QA</h3><p>Manual Testing, Bug Reports, Usability checks</p></div>
+    </div>
+    <p class="note">Edit these to match your real level (be honest — clients value accuracy).</p>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Contact</h2>
+    <p class="subtitle" style="margin-top:0">
+      Want to work together? Send me a message. (This form is local-only; for real usage, use email or a form service.)
+    </p>
+
+    <form onsubmit="return fakeSend(event)">
+      <label for="name">Name</label>
+      <input id="name" name="name" placeholder="Client name" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="client@email.com" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+
+      <div class="btn-row">
+        <button class="btn primary" type="submit">Send</button>
+        <a class="btn" href="mailto:oumayma20054@gmail.com">Email me directly</a>
+      </div>
+      <p id="status" class="note" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div class="footer">
+    © <span id="year"></span> Oumaima Mamdouh — Portfolio
+  </div>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function fakeSend(e){
+    e.preventDefault();
+    const status = document.getElementById("status");
+    status.textContent = "Message prepared. Use the Email button to send it (this demo form does not submit online).";
+    return false;
+  }
+</script>
+</body>
+</html>
